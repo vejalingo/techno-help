@@ -1,8 +1,6 @@
 {
     "root": true,
     "extends": [
-      "airbnb",
-      "airbnb/hooks",
       "plugin:@typescript-eslint/recommended",
       "plugin:react/recommended",
       "plugin:react-hooks/recommended"
@@ -17,6 +15,9 @@
         "version": "detect"
       }
     },
-    "rules": {}
+    "rules": {
+      "@typescript-eslint/no-empty-function": 0,
+      "react/display-name": 0
+    }
   }
   
