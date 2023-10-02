@@ -36,8 +36,6 @@ interface State {
 
 type Action = { type: 'ADD_ISSUE'; payload: Issue } | { type: 'UPDATE_ISSUE'; payload: { id: string; updatedIssue: Issue } };
 
-type Dispatch = (action: Action) => void;
-
 interface ContextValue {
   project: Project;
   addIssue: (newIssue: Issue) => void;
