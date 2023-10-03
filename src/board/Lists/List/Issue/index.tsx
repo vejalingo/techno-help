@@ -38,8 +38,9 @@ const BoardListIssue: React.FC<BoardListIssueProps> = ({ projectUsers, issue, in
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             $borderColor={issueStatusColors[issue.status]}
+            $isBeingdragged={isBeingdragged}
           >
-            <Issue $isBeingdragged={isBeingdragged}>
+            <Issue>
               <Title>{issue.title}</Title>
               <Space>
                 {issue?.tags?.map((tag, index) => (

@@ -3,14 +3,21 @@ import { Link } from 'react-router-dom';
 import { Avatar, Typography } from 'antd';
 import { color, font, mixin } from 'utils/styles';
 
-export const IssueLink = styled(Link)<{$borderColor: string}>`
+export const IssueLink = styled(Link)<{$borderColor: string, $isBeingdragged: boolean}>`
   border-top: 4px solid ${(props) => props.$borderColor};
   display: block;
   margin-bottom: 5px;
   text-decoration: none;
+
+  ${(props) =>
+    props.$isBeingdragged &&
+    css`
+      transform: rotate(3deg);
+      box-shadow: 5px 10px 30px 0px rgba(9, 30, 66, 0.15);
+    `}
 `;
 
-export const Issue = styled.div<{$isBeingdragged: boolean}>`
+export const Issue = styled.div`
   padding: 10px;
   border-radius: 3px;
   background: #fff;
@@ -23,13 +30,6 @@ export const Issue = styled.div<{$isBeingdragged: boolean}>`
   &:hover {
     background: ${color.backgroundLight};
   }
-
-  ${(props) =>
-    props.$isBeingdragged &&
-    css`
-      transform: rotate(3deg);
-      box-shadow: 5px 10px 30px 0px rgba(9, 30, 66, 0.15);
-    `}
 `;
 
 export const Title = styled(Typography)`
